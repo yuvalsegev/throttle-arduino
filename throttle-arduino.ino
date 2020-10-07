@@ -41,38 +41,8 @@ void setup()
     Serial.begin(115200);
     Serial.setTimeout(1000);
     down_data.pb = 1;
-    
-    // Serial.println("up");
-    // pinMode(23, OUTPUT);
-    // pinMode(25, OUTPUT);
-    // digitalWrite(25, LOW);
-    // // // pinMode(21, INPUT);
-    // // digitalWrite(23, LOW);
-    // // delay(500);
-    // digitalWrite(23, LOW);
-    // delay(1000);
-    // digitalWrite(23, HIGH);
 
-    while (true)
-    {
-        left_thr.run(true, 50);
-        right_thr.run(true, 50);
-        // Serial.println(analogRead(left_thr.pot_pin));
-    }
-    
 }
-
-// void loop()
-// {
-// //     // parking_brake.run(false);
-// // //     // right_thr.run(true, MAX_THROTTLE);
-// // //     // left_thr.run(true, MAX_THROTTLE);
-// //     // Serial.println(analogRead(A2));
-// // // //     // digitalWrite(13, digitalRead(21));
-
-//     left_trim.run(500);
-// }
-
 
 #define BARKER (0xCA)
 
