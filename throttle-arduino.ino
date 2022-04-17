@@ -11,8 +11,8 @@
 
 AccelStepper right_thr_stepper(AccelStepper::FULL4WIRE, 12, 10, 9, 11);
 AccelStepper left_thr_stepper(AccelStepper::FULL4WIRE, 7, 5, 4, 6);
-ThrottleHandle right_thr(&right_thr_stepper, 8, A1, 980, 555, false, A0, 715, 550, false);
-ThrottleHandle left_thr(&left_thr_stepper, 22, A2, 458, 903, false, A3, 640, 470, false);
+ThrottleHandle right_thr(&right_thr_stepper, 8, A1, 967, 532, false, A0, 715, 550, false);
+ThrottleHandle left_thr(&left_thr_stepper, 22, A2, 445, 897, false, A3, 640, 470, false);
 Speedbrake speedbrake(3, A4, 440, 41);
 Flaps flaps(A5, 0, 750);
 Parkingbrake parking_brake(24, 23);
@@ -42,6 +42,10 @@ void setup()
     Serial.setTimeout(1000);
     down_data.pb = 1;
 
+    // while(true)
+    // {
+    //     Serial.println(analogRead(A2));
+    // }
 }
 
 #define BARKER (0xCA)
