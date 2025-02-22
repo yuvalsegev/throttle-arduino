@@ -2,7 +2,7 @@
 
 #include <AccelStepper.h>
 #include <Servo.h>
-#include <ServoEasing.h>
+#include <ServoEasing.hpp>
 
 #define MAX_SB 75.3
 #define MIN_SB 0
@@ -38,6 +38,10 @@ public:
 
     bool run(float value, int enable)
     {
+        // servo.attach(servo_pin);
+        // servo.write(0);
+        // return true;
+        // return false;
         float handle_value = read();
         if ((abs(value - handle_value) > 70 && enable && handle_value >= 0) || target_value != -1)
         {

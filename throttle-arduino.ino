@@ -13,7 +13,8 @@ AccelStepper right_thr_stepper(AccelStepper::FULL4WIRE, 12, 10, 9, 11);
 AccelStepper left_thr_stepper(AccelStepper::FULL4WIRE, 7, 5, 4, 6);
 ThrottleHandle right_thr(&right_thr_stepper, 8, A1, 967, 532, false, A0, 715, 550, false);
 ThrottleHandle left_thr(&left_thr_stepper, 22, A2, 445, 897, false, A3, 640, 470, false);
-Speedbrake speedbrake(3, A4, 440, 41);
+// Note: zero point in SB is at the ARMED position
+Speedbrake speedbrake(3, A4, 645, 252);
 Flaps flaps(A5, 0, 750);
 Parkingbrake parking_brake(24, 23);
 Output pb_light(25);
