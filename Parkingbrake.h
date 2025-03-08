@@ -26,22 +26,22 @@ public:
     void solenoid(bool value)
     {
         // Not yet ready, waiting for diode.
-        digitalWrite(solenoid_pin, !value);
+        // digitalWrite(solenoid_pin, !value); // Temporary --- Disabling because of trouble caused by this shit
     }
 
     void run(bool sim_val)
     {
-        if(!sim_val && read() && start_time == 0 && (millis() - last_up_time > 500))
+        if(!sim_val && read() && start_time == 0 && (millis() - last_up_time > 200))
         {
             start_time = millis();
             solenoid(true);
         }
-        else if (sim_val || ((millis() - start_time) > 500))
+        else if (sim_val || ((millis() - start_time) > 200))
         {
             solenoid(false);
         }
 
-        if(((millis() - start_time) > 500) && !read())
+        if(((millis() - start_time) > 200) && !read())
         {
             start_time = 0;
         }

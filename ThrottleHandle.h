@@ -42,10 +42,10 @@ public:
         float pot_value = map(analogRead(pot_pin), pot_zero, pot_max, 0, MAX_THROTTLE * 100) / 100.0;
         float rev_value = map(analogRead(rev_pin), rev_zero, rev_max, 0, MIN_THROTTLE * 100) / 100.0;
 
-        if (pot_value < 10 && rev_value < 0)
-        {
-            return constrain(rev_value, MIN_THROTTLE, 0);
-        }
+        // if (pot_value < 10 && rev_value < 0)
+        // {
+        //     return constrain(rev_value, MIN_THROTTLE, 0);
+        // }
 
         return constrain(pot_value, 0, MAX_THROTTLE);
     }
